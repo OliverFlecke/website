@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/icons.scss';
 
 .container {
   display: flex;
@@ -8,4 +9,8 @@
 
 .container a {
   padding: 0 6px;
+}
+
+.icon {
+  @extend %icon;
 }

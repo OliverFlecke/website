@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import ReactSVG from 'react-svg';
-import styles from './DeveloperTools.scss';
-import { icon } from '../../styles/icons.scss';
+import styles from './DeveloperTools.module.scss';
 
 const tools = [
   'csharp',
@@ -27,7 +26,7 @@ const DeveloperTools = memo(() => (
       <ReactSVG
         key={iconname}
         src={`../../icons/${iconname}.svg`}
-        svgClassName={`${icon} ${styles.icon}`}
+        svgClassName={styles.icon}
       />
     ))}
   </div>

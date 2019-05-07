@@ -2,7 +2,8 @@ import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from './header';
-// import './layout.css';
+import './layout.css';
+import Contact from './Contact/Contact';
 
 const Layout = (props: { children: JSX.Element | JSX.Element[] }) => (
   <StaticQuery
@@ -28,7 +29,7 @@ const Layout = (props: { children: JSX.Element | JSX.Element[] }) => (
         >
           <main>{props.children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with
+            <Contact />© {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>

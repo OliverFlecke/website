@@ -4,6 +4,7 @@
   "description": "",
   "version": "0.1.0",
   "author": "Oliver Fleckenstein <Oliverfl@live.dk>",
+  "homepage": "oliverflecke.me",
   "dependencies": {
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
@@ -39,6 +40,7 @@
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
     "typed-css-modules": "^0.4.2",
     "typescript": "^3.4.5"
   },
@@ -47,6 +49,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "prebuild": "rimraf public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "build-scss": "tcm ./src/ -p **/*.scss",
@@ -54,7 +57,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "predeploy": "gatsby build",
+    "predeploy": "npm run build && echo oliverflecke.me> public/CNAME",
     "deploy": "gh-pages -d public"
   },
   "repository": {

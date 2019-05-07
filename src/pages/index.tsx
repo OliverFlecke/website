@@ -7,8 +7,7 @@ const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi!</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <Link to="/about/">Go to page 2</Link>
+    <Link to="/about/">About</Link>
   </Layout>
 );
 
