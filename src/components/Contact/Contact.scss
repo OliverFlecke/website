@@ -1,0 +1,11 @@
+@import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container a {
+  padding: 0 6px;
+}

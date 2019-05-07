@@ -1,0 +1,10 @@
+@import './colors.scss';
+
+.icon {
+  color: $orange;
+  fill: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,46 @@
+@import '../styles/colors.scss';
+
+code {
+  font-family: 'Fira Mono';
+  border-radius: 5px;
+}
+
+.article {
+  p {
+    font-size: 15pt;
+    text-justify: inter-word;
+    text-align: justify;
+
+    code {
+      color: $font-color-code;
+    }
+
+    a {
+      color: $orange;
+
+      code {
+        color: $orange;
+      }
+    }
+  }
+
+  h2 {
+    color: $orange;
+    margin: 10px 0 0 0;
+    padding-top: 10px;
+    border-top: 1px solid $paper;
+  }
+  h3 {
+    color: $orange;
+  }
+}
+
+.title {
+  color: $orange;
+  margin: 20px 0 5px 0;
+  font-size: 20pt;
+}
+
+.date {
+  color: $paper;
+}

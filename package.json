@@ -19,7 +19,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-svg": "^9.0.4"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.8",
@@ -38,6 +39,7 @@
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "prettier": "^1.17.0",
+    "typed-css-modules": "^0.4.2",
     "typescript": "^3.4.5"
   },
   "keywords": [
@@ -47,6 +49,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "build-scss": "tcm ./src/ -p **/*.scss",
     "format": "prettier --write src/**/*.{ts,tsx} && eslint --fix \"src/**/*.{ts,tsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
