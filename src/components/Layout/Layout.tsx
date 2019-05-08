@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Header from '../header';
+import Header from '../Header/Header';
 import './Layout.module.scss';
 import Footer from '../Footer/Footer';
 
@@ -23,13 +23,14 @@ const Layout = (props: { children: JSX.Element | JSX.Element[] }) => (
           style={{
             margin: `0 auto`,
             maxWidth: 960,
+            width: '100%',
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
           }}
         >
           <main>{props.children}</main>
+          <Footer />
         </div>
-        <Footer />
       </>
     )}
   />
