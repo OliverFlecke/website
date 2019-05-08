@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import moment from 'moment';
+import { format } from 'date-fns';
 import styles from './PostDescription.scss';
 
 interface PostDescriptionProps {
@@ -12,17 +11,9 @@ interface PostDescriptionProps {
 
 const PostDescription = (props: PostDescriptionProps) => (
   <div className={styles.container}>
-    <Link
-      href={{ pathname: '/post', query: { id: props.id } }}
-      as={`${process.env.ASSET_PREFIX}/post/${props.id}`}
-      key={props.id}
-    >
-      <a className={styles.title}>{props.title}</a>
-    </Link>
+    <a className={styles.title}>{props.title}</a>
     <br />
-    <span className={styles.date}>
-      {moment(props.date).format('YYYY-MM-DD')}
-    </span>
+    <span className={styles.date}>{format(props.date, 'YYYY-MM-DD')}</span>
     <p className={styles.description}>{props.description}</p>
   </div>
 );

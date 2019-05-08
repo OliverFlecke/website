@@ -85,8 +85,8 @@ function SEO(props: {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
-  description: ``,
+  keywords: ['Oliver Fleckenstein', 'OliverFlecke'],
+  description: `Personal website for Oliver Fleckenstein`,
 };
 
 SEO.propTypes = {

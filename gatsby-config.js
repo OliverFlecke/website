@@ -35,8 +35,19 @@ module.exports = {
       resolve: `gatsby-plugin-typescript`,
       options: {
         isTsx: true,
+        transpileOnly: false,
       },
     },
+    // 'gatsby-plugin-typescript-checker',
     `gatsby-plugin-sass`,
+    `gatsby-plugin-svgr`,
+    // {
+    //   resolve: `gatsby-plugin-react-svg`,
+    //   options: {
+    //     rule: {
+    //       include: /icons/
+    //     }
+    //   }
+    // }
   ],
 };
