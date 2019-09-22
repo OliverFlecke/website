@@ -40,5 +40,19 @@ module.exports = {
     // 'gatsby-plugin-typescript-checker',
     `gatsby-plugin-sass`,
     `gatsby-plugin-svgr`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `publications`,
+        path: `${__dirname}/publications`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/publications`,
+        destination: '/publications',
+      },
+    },
   ],
 };
