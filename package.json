@@ -4,7 +4,7 @@
   "description": "",
   "version": "0.1.0",
   "author": "Oliver Fleckenstein <Oliverfl@live.dk>",
-  "homepage": "oliverflecke.me",
+  "homepage": "https://oliverflecke.me",
   "dependencies": {
     "@svgr/webpack": "^4.2.0",
     "date-fns": "^1.30.1",
