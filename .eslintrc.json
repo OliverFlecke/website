@@ -35,6 +35,7 @@
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
     "react/display-name": "off",
     "no-console": "warn"
   }

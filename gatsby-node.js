@@ -26,42 +26,39 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const metadata = {};
     const pdfPath = node.absolutePath;
 
-    pdfExtract.extract(
-      pdfPath,
-      {} /* options, currently nothing available */,
-      function(err, data) {
-        if (err) {
-          return console.error(err);
-        }
+    pdfExtract.extract(pdfPath, {}, function(err, data) {
+      if (err) {
+        return console.error(err);
+      }
 
-        if (data.meta.info) {
-          const downloadPath = pdfPath.match(/(.*)\/publications\/(.*)/)[2];
-          const fallbackName = downloadPath.replace(/\.pdf$/, '');
+      if (data.meta.info) {
+        const downloadPath = pdfPath.match(/(.*)\/publications\/(.*)/)[2];
+        const fallbackName = downloadPath.replace(/\.pdf$/, '');
 
-          metadata.downloadPath = `../../pdf/${downloadPath}`;
-          metadata.title = data.meta.info.Title || fallbackName;
-          metadata.author = data.meta.info.Author || 'Unknown';
-          metadata.abstract = data.meta.info.subject || '';
-          metadata.pageCount = (data.pages.length || 0).toString();
-          metadata.fingerprint = Math.random().toString();
-        }
+        metadata.downloadPath = `publications/${downloadPath}`;
+        metadata.title = data.meta.info.Title || fallbackName;
+        metadata.author = data.meta.info.Author || 'Unknown';
+        metadata.abstract = data.meta.info.Subject;
+        metadata.pageCount = data.pages.length || 0;
+        metadata.fingerprint = Math.random().toString();
+        metadata.date = data.meta.info['Custom']['date'];
+      }
 
-        const bookNode = {
-          ...metadata,
-          path: path.replace(/\s|\(|\)|\[|\]<|>/g, '-'),
-          id: `${node.id} >>> ${node.extension}`,
-          children: [],
-          parent: node.id,
-          internal: {
-            contentDigest: metadata.fingerprint,
-            type: 'publication',
-          },
-        };
+      const publicationNode = {
+        ...metadata,
+        path: path.replace(/\s|\(|\)|\[|\]<|>/g, '-'),
+        id: `${node.id} >>> ${node.extension}`,
+        children: [],
+        parent: node.id,
+        internal: {
+          contentDigest: metadata.fingerprint,
+          type: 'publication',
+        },
+      };
 
-        createNode(bookNode);
-        createParentChildLink({ parent: node, child: bookNode });
-      },
-    );
+      createNode(publicationNode);
+      createParentChildLink({ parent: node, child: publicationNode });
+    });
   }
 };
 

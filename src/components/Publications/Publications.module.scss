@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+
+.publicationContainer {
+  border: 1px solid $orange;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 0px;
+
+  .publicationHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h3 {
+      color: $orange;
+      margin: 0;
+    }
+
+    .downloadIcon {
+      color: $orange;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .dateAndAuthorContainer {
+    display: flex;
+    flex-direction: row;
+
+    .date {
+      color: $blackboard;
+      font-size: 0.9rem;
+      padding-right: 2rem;
+    }
+
+    .author {
+      color: $paper;
+    }
+  }
+}

@@ -10,12 +10,12 @@ const About = (): JSX.Element => (
     <SEO title="About" />
     <section className={styles.about}>
       <p>
-        My name is Oliver Fleckenstein, and currently studing at Technical
-        University of Denmark (DTU) for my Masters in Computer Science and
-        Engineering, where my focus have been on formal logic, algorithms and
-        artificial intelligence. During my studies, I have been working at
-        Microsoft Denmark as a student worker, primarily building front-end
-        applications with React and TypeScript.
+        My name is Oliver Fleckenstein, and I recently graduated from the
+        Technical University of Denmark (DTU), getting my M.Sc. in Computer
+        Science and Engineering, where my focus have been on formal logic,
+        algorithms and artificial intelligence. During my studies, I have been
+        working at Microsoft Denmark as a student worker, primarily building
+        front-end applications with React and TypeScript.
       </p>
       <div className={styles.profile}>
         <img src={profileImage} alt="profile" />
@@ -23,8 +23,8 @@ const About = (): JSX.Element => (
     </section>
     <section>
       <p>
-        I love learning new stuff, such as new languages and frameworks. Here
-        are some of the tools and technologies I have experience with:
+        I enjoy learning new technologies, languages and stuff in general. Here
+        are some of the tools I have experience with:
       </p>
       <DeveloperTools />
     </section>
