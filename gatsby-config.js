@@ -54,5 +54,19 @@ module.exports = {
         destination: '/publications',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'other',
+        path: `${__dirname}/other`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/other`,
+        destination: '/',
+      },
+    },
   ],
 };

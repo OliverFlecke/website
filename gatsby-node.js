@@ -18,7 +18,10 @@ exports.onCreateWebpackConfig = function({ actions }) {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNode, createParentChildLink } = actions;
 
-  if (node.internal.mediaType === `application/pdf`) {
+  if (
+    node.sourceInstanceName === 'publications' &&
+    node.internal.mediaType === `application/pdf`
+  ) {
     const path = createFilePath({ node, getNode, basePath: `publications` });
     const metadata = {};
     const pdfPath = node.absolutePath;
